@@ -33,6 +33,10 @@ input[type=submit] {
     font-size: large;
 }
 
+.question-answer {
+    margin-left: 5%;
+}
+
 #answers > h1 {
     border-color: green;
     border-style: solid;
