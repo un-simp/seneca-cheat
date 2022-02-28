@@ -1,5 +1,14 @@
 #furl {
-    width: 96%;
+    width: 80%;
+    margin: 5px;
+    font-size: large;
+}
+
+input[type=submit] {
+    width: 10%;
+    font-size: large;
+    color: white;
+    background: blue;
 }
 
 #answers {
