@@ -22,6 +22,7 @@ input[type=submit] {
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 1%;
+    padding-bottom: 1%;
     border-color: blue;
     border-style: dashed;
 }
