@@ -6,7 +6,6 @@ window.onload = function onload() {
     if (url === "") {
         return
     }
-    // url = "https://app.senecalearning.com/classroom/course/4cb62f70-25d5-11e8-997c-45e9415ece8c/section/9a95a0ac-a87e-4073-a745-a5d94954d313/session"
     let course = /(?<=https:\/\/app\.senecalearning\.com\/classroom\/course\/)(.*)(?=\/section\/)/.exec(url)[0]
     let section = /(?<=\/section\/)(.*)(?=\/session)/.exec(url)[0]
 
