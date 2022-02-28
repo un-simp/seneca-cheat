@@ -8,3 +8,6 @@ This has been created for curiosity only, I do not condone cheating in any way, 
 It is an important part of your learning.
 
 ![Example of generated answers](example.png)
+
+Credit to [IsGabriellaCurios](https://github.com/IsGabriellaCurious) for her C# tool
+[SenecaCheatSheet](https://github.com/IsGabriellaCurious/SenecaCheatSheet) for figuring out the method to fetch answers.
