@@ -60,8 +60,8 @@ function generate_answers(answers) {
                 case "multiple-choice":
                     questions += `
                     <div class="question">
-                        <p>${question["content"]["question"]}</p>
-                        <b>${question["content"]["correctAnswer"]}</b>
+                        <p><u>${question["content"]["question"]}</u></p>
+                        <p><b>${question["content"]["correctAnswer"]}</b></p>
                     </div>                
                     `
                     break
@@ -83,14 +83,14 @@ function generate_answers(answers) {
                     if (question["content"]["pretestQuestion"] !== undefined) {
                     questions += `
                     <div class="question">
-                        <p>${question["content"]["pretestQuestion"]}</p>
-                        <b>${question["content"]["prestestCorrectAnswer"]}</b>
+                        <p><u>${question["content"]["pretestQuestion"]}</u></p>
+                        <p><b>${question["content"]["prestestCorrectAnswer"]}</b></p>
                     </div>
                     `
                     }
                     questions += `
                     <div class="question">
-                        <p>${question["content"]["statement"]}</p>
+                        <p><u>${question["content"]["statement"]}</u></p>
                         ${res}
                     </div>
                     `
@@ -99,8 +99,8 @@ function generate_answers(answers) {
                     if (question["content"]["pretestQuestion"] !== undefined) {
                         questions += `
                         <div class="question">
-                            <p>${question["content"]["pretestQuestion"]}</p>
-                            <b>${question["content"]["prestestCorrectAnswer"]}</b>
+                            <p><u>${question["content"]["pretestQuestion"]}</u></p>
+                            <p><b>${question["content"]["prestestCorrectAnswer"]}</b></p>
                         </div>
                         `
                     }
@@ -121,7 +121,7 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p>${question["content"]["statement"]}</p>
+                        <p><u>${question["content"]["statement"]}</u></p>
                         ${res}
                     </div>
                     `
@@ -135,7 +135,7 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p>${question["content"]["statement"]}</p>
+                        <p><u>${question["content"]["statement"]}</u></p>
                         ${res}
                     </div>
                     `
@@ -144,7 +144,7 @@ function generate_answers(answers) {
                     if (question["content"]["question"] !== undefined) {
                         questions += `
                         <div class="question">
-                            <p>${question["content"]["question"]}</p>
+                            <p><u>${question["content"]["question"]}</u></p>
                         `
                     }
                     question["content"]["steps"].forEach(step => {
@@ -159,7 +159,7 @@ function generate_answers(answers) {
                         if (step["instruction"] !== undefined) {
                             questions += `
                             <div class="question">
-                                <p>${step["instruction"]}</p>
+                                <p><u>${step["instruction"]}</u></p>
                                 <p>${res}</p>
                             </div>
                             <br>
@@ -187,7 +187,7 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p>${question["content"]["question"]}</p>
+                        <p><u>${question["content"]["question"]}</u></p>
                         ${res}
                     </div>
                     `
@@ -201,7 +201,7 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p>${question["content"]["statement"]}</p>
+                        <p><u>${question["content"]["statement"]}</u></p>
                         ${res}
                     </div>
                     `
@@ -217,7 +217,7 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p>${res}</p>
+                        <p><u>${res}</u></p>
                     </div>
                     `
                     break
@@ -230,7 +230,7 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p>${question["content"]["title"]}</p>
+                        <p><u>${question["content"]["title"]}</u></p>
                         ${res}
                     </div>
                     `
@@ -244,7 +244,7 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p>${question["content"]["title"]}</p>
+                        <p><u>${question["content"]["title"]}</u></p>
                         ${res}
                     </div>
                     `
