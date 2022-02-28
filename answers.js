@@ -60,13 +60,13 @@ function generate_answers(answers) {
                 case "multiple-choice":
                     questions += `
                     <div class="question">
-                        <p><u>${question["content"]["question"]}</u></p>
-                        <p><b>${question["content"]["correctAnswer"]}</b></p>
+                        <p class="question-question"><u>${question["content"]["question"]}</u></p>
+                        <p class="question-answer"><b>${question["content"]["correctAnswer"]}</b></p>
                     </div>                
                     `
                     break
                 case "list":
-                    res += "<ul>"
+                    res += "<ul class=\"question-answer\">"
                     question["content"]["values"].forEach(answer_part => {
                         res += "<li>"
                         answer_part["value"].forEach(answer => {
@@ -83,14 +83,14 @@ function generate_answers(answers) {
                     if (question["content"]["pretestQuestion"] !== undefined) {
                     questions += `
                     <div class="question">
-                        <p><u>${question["content"]["pretestQuestion"]}</u></p>
-                        <p><b>${question["content"]["prestestCorrectAnswer"]}</b></p>
+                        <p class="question-question"><u>${question["content"]["pretestQuestion"]}</u></p>
+                        <p class="question-answer"><b>${question["content"]["prestestCorrectAnswer"]}</b></p>
                     </div>
                     `
                     }
                     questions += `
                     <div class="question">
-                        <p><u>${question["content"]["statement"]}</u></p>
+                        <p class="question-question"><u>${question["content"]["statement"]}</u></p>
                         ${res}
                     </div>
                     `
@@ -99,13 +99,13 @@ function generate_answers(answers) {
                     if (question["content"]["pretestQuestion"] !== undefined) {
                         questions += `
                         <div class="question">
-                            <p><u>${question["content"]["pretestQuestion"]}</u></p>
-                            <p><b>${question["content"]["prestestCorrectAnswer"]}</b></p>
+                            <p class="question-question"><u>${question["content"]["pretestQuestion"]}</u></p>
+                            <p class="question-answer"><b>${question["content"]["prestestCorrectAnswer"]}</b></p>
                         </div>
                         `
                     }
 
-                    res = "<ul>"
+                    res = "<ul class=\"question-answer\">"
                     question["content"]["values"].forEach(answer_part => {
                         res += "<li>"
                         answer_part["value"].forEach(answer => {
@@ -121,13 +121,13 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p><u>${question["content"]["statement"]}</u></p>
+                        <p class="question-question"><u>${question["content"]["statement"]}</u></p>
                         ${res}
                     </div>
                     `
                     break
                 case "toggles":
-                    res += "<ul>"
+                    res += "<ul class=\"question-answer\">"
                     question["content"]["toggles"].forEach(toggle => {
                         res += `<li><b>${toggle["correctToggle"]}</b></li>`
                     })
@@ -135,7 +135,7 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p><u>${question["content"]["statement"]}</u></p>
+                        <p class="question-question"><u>${question["content"]["statement"]}</u></p>
                         ${res}
                     </div>
                     `
@@ -144,7 +144,7 @@ function generate_answers(answers) {
                     if (question["content"]["question"] !== undefined) {
                         questions += `
                         <div class="question">
-                            <p><u>${question["content"]["question"]}</u></p>
+                            <p class="question-question"><u>${question["content"]["question"]}</u></p>
                         `
                     }
                     question["content"]["steps"].forEach(step => {
@@ -159,14 +159,14 @@ function generate_answers(answers) {
                         if (step["instruction"] !== undefined) {
                             questions += `
                             <div class="question">
-                                <p><u>${step["instruction"]}</u></p>
-                                <p>${res}</p>
+                                <p class="question-question"><u>${step["instruction"]}</u></p>
+                                <p class="question-answer">${res}</p>
                             </div>
                             <br>
                             `
                         } else {
                             questions += `
-                            <p>${res}</p>
+                            <p class="question-answer">${res}</p>
                             `
                         }
                     })
@@ -177,7 +177,7 @@ function generate_answers(answers) {
 
                     break
                 case "multiSelect":
-                    res += "<ul>"
+                    res += "<ul class=\"question-answer\">"
                     question["content"]["options"].forEach(option => {
                         if (option["correct"] === true) {
                             res += `<li>${option["text"]}</li>`
@@ -187,13 +187,13 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p><u>${question["content"]["question"]}</u></p>
+                        <p class="question-question"><u>${question["content"]["question"]}</u></p>
                         ${res}
                     </div>
                     `
                     break
                 case "exact-list":
-                    res += "<ul>"
+                    res += "<ul class=\"question-answer\">"
                     question["content"]["values"].forEach(value => {
                         res += `<li>${value["value"][0]["word"]}</li>`
                     })
@@ -201,7 +201,7 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p><u>${question["content"]["statement"]}</u></p>
+                        <p class="question-question"><u>${question["content"]["statement"]}</u></p>
                         ${res}
                     </div>
                     `
@@ -222,7 +222,7 @@ function generate_answers(answers) {
                     `
                     break
                 case "flow":
-                    res += "<ul>"
+                    res += "<ul class=\"question-answer\">"
                     question["content"]["orderedValues"].forEach(value => {
                         res += `<li>${value}</li>`
                     })
@@ -230,13 +230,13 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p><u>${question["content"]["title"]}</u></p>
+                        <p class="question-question"><u>${question["content"]["title"]}</u></p>
                         ${res}
                     </div>
                     `
                     break
                 case "grid":
-                    res += "<ul>"
+                    res += "<ul class=\"question-answer\">"
                     question["content"]["definitions"].forEach(definition => {
                         res += `<li>${definition["word"]}: ${definition["text"]}</li>`
                     })
@@ -244,7 +244,7 @@ function generate_answers(answers) {
 
                     questions += `
                     <div class="question">
-                        <p><u>${question["content"]["title"]}</u></p>
+                        <p class="question-question"><u>${question["content"]["title"]}</u></p>
                         ${res}
                     </div>
                     `
