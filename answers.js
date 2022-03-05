@@ -282,6 +282,8 @@ function generate_answers(answers) {
         `
     })
 
+    questions = questions.replaceAll("\$\$\\leftrightarrow\$\$", "<-->")
+
     return `
     <h1>${title}</h1>
     ${questions}
