@@ -247,6 +247,22 @@ function generate_answers(answers) {
                         ${res}
                     </div>
                     `
+                    break
+                case "image-description":
+                    question["content"]["words"].forEach(part => {
+                        if (typeof part === "string") {
+                            res += part
+                        } else {
+                            res += `<b>${part["word"]}</b>`
+                        }
+                    })
+
+                    questions += `
+                    <div class="question">
+                        <p>${res}</p>
+                    </div>
+                    `
+                    break
             }
         })
         questions += `
