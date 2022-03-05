@@ -237,7 +237,19 @@ function generate_answers(answers) {
                 case "grid":
                     res += "<ul class=\"question-answer\">"
                     question["content"]["definitions"].forEach(definition => {
-                        res += `<li>${definition["word"]}: ${definition["text"]}</li>`
+                        if (typeof definition["word"] === "string") {
+                            res += `<li>${definition["word"]} -> ${definition["text"]}</li>`
+                        } else {
+                            let tmp = ""
+                            definition["word"].forEach(part => {
+                                if (typeof part === "string") {
+                                    tmp += part
+                                } else {
+                                    tmp += `<b>${part["caps"]}</b>`
+                                }
+                            })
+                            res += `<li>${tmp} --> ${definition["text"]}</li>`
+                        }
                     })
                     res += "</ul>"
 
