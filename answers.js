@@ -245,7 +245,7 @@ function generate_answers(answers) {
                                 if (typeof part === "string") {
                                     tmp += part
                                 } else {
-                                    tmp += `<b>${part["caps"]}</b>`
+                                    tmp += `<b>${part["word"]}</b>`
                                 }
                             })
                             res += `<li>${tmp} --> ${definition["text"]}</li>`
